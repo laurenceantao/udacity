@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}Restaurants{% endblock %}
+
+{% block content %}
+<h1 class="title">{{restaurant.name}} Menu</h1>
+	{% if appetizers %}
+		<div id="appetizers" class="course-section">
+			<h2 class="course">Appetizers</h2>
+			{% for i in appetizers %}
+				<div class="menu-item">
+					<div class="item-name">
+						<h3>{{i.name}}</h3>
+					</div>
+					<div class="item-price">{{i.price}}</div>
+					<div class="item-description">{{i.description}}</div>
+					<div class="edit_delete">
+						<a href={{url_for('editMenuItem', restaurant_id = restaurant.id, menu_id=i.id)}}>Edit</a>
+						<a href={{url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id=i.id)}}>Delete</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+	{% if entrees %}
+		<div id="entrees" class="course-section">
+			<h2 class="course">Entrees</h2>
+			{% for i in entrees %}
+				<div class="menu-item">
+					<div class="item-name">
+						<h3>{{i.name}}</h3>
+					</div>
+					<div class="item-price">{{i.price}}</div>
+					<div class="item-description">{{i.description}}</div>
+					<div class="edit_delete">
+						<a href={{url_for('editMenuItem', restaurant_id = restaurant.id, menu_id=i.id)}}>Edit</a>
+						<a href={{url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id=i.id)}}>Delete</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+	{% if desserts %}
+		<div id="desserts" class="course-section">
+			<h2 class="course">Desserts</h2>
+			{% for i in desserts %}
+				<div class="menu-item">
+					<div class="item-name">
+						<h3>{{i.name}}</h3>
+					</div>
+					<div class="item-price">{{i.price}}</div>
+					<div class="item-description">{{i.description}}</div>
+					<div class="edit_delete">
+						<a href={{url_for('editMenuItem', restaurant_id = restaurant.id, menu_id=i.id)}}>Edit</a>
+						<a href={{url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id=i.id)}}>Delete</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+	{% if beverages %}
+		<div id="beverages" class="course-section">
+			<h2 class="course">Beverages</h2>
+			{% for i in beverages %}
+				<div class="menu-item">
+					<div class="item-name">
+						<h3>{{i.name}}</h3>
+					</div>
+					<div class="item-price">{{i.price}}</div>
+					<div class="item-description">{{i.description}}</div>
+					<div class="edit_delete">
+						<a href={{url_for('editMenuItem', restaurant_id = restaurant.id, menu_id=i.id)}}>Edit</a>
+						<a href={{url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id=i.id)}}>Delete</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+	{% if other_courses %}
+		<div id="other_courses" class="course-section">
+			<h2 class="course">Others</h2>
+			{% for i in other_courses %}
+				<div class="menu-item">
+					<div class="item-name">
+						<h3>{{i.name}}</h3>
+					</div>
+					<div class="item-price">{{i.price}}</div>
+					<div class="item-course">{{i.course}}</div>
+					<div class="item-description">{{i.description}}</div>
+					<div class="edit_delete">
+						<a href={{url_for('editMenuItem', restaurant_id = restaurant.id, menu_id=i.id)}}>Edit</a>
+						<a href={{url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id=i.id)}}>Delete</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+{% endblock %}
+
+

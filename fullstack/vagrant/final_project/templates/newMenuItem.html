@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}New Menu Item{% endblock %}
+
+{% block content %}
+<h1 class="restaurant-title">{{restaurant.name}}</h1>
+<h2 class="section-title">New Menu Item</h2>
+<form method="POST">
+<label for="name">Name of dish:</label>
+<input class="field" id="name" type="text" name="dish_name">
+<label for="course">Course:</label>
+<select class="field" id="course" name="dish_course">
+	<option selected disabled></option>
+	<option>Appetizer</option>
+	<option>Entree</option>
+	<option>Dessert</option>
+	<option>Beverage</option>
+</select>
+<label for="price">Price:</label>
+<input class="field" id="price" name="dish_price" type="text">
+<label for="description">Description:</label>
+<textarea class="field" id="description" name="dish_description"></textarea>
+<div>
+	<input type="submit" value="Create">
+	<a href={{url_for('showMenu', restaurant_id=restaurant.id)}}>Cancel</a>
+</div>
+</form>
+{% endblock %}

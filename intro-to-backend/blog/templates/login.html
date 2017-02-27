@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+{% extends "main.html"%}
+{% block content %}
+<h2>Login</h2>
+<div class="signup userdetails">
+	<form method="post">
+	<div class="element">
+		<label for="user">Username</label>
+		<input id="user" name="username" value="{{username}}">
+	</div>
+
+	<div class="element">
+		<label for="pword1">Password</label>
+		<input type="password" id="pword1" name="password" value={{password}}>
+	</div>
+	<p class="error">{{error}}</p>
+	<input type="submit" class="submit">
+	</form>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>restoDB - {% block title %}{% endblock %}</title>
+</head>
+<header>
+	<nav>
+		<div id="website-branding">restoDB</div>
+		<ul>
+			{% if restaurants %}
+			<li><a href={{url_for('newRestaurant')}}>New Restaurant</a></li>
+			{% endif %}
+			{% if restaurant %}
+				<li><a href={{url_for('newMenuItem', restaurant_id=restaurant.id)}}>New Menu Item</a></li>
+			{% endif %}
+		</ul>
+	</nav>
+</header>
+<body>
+	{% block content %}
+	{% endblock %}
+</body>
+</html>

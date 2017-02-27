@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homework1 - ROT13</title>
+</head>
+<body>
+{% extends "main.html" %}
+{% block content %}
+<h2>Enter some text to ROT13:</h2>
+<form method="post">
+	<textarea name="text" rows="10" cols="50">{{rotted}}</textarea>
+	<br>
+	<input type="submit">
+</form>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Unit 3 Homework Blog</title>
+</head>
+<body>
+{% extends "main.html" %}
+{% block content %}
+<h2>New Post</h2>
+
+<form method="post" class="blogpost new">
+	<label for="post-title">Title:</label>
+		<input id="post-title" name="post-title" class="new_blogpost-title" value="{{title}}" type="text">
+	<br>
+	<label for="post-content">Content:</label>
+	<textarea cols="50" rows="5" id="post-content" name="post-content" class="new_blogpost-content">{{content}}</textarea>
+	<br>
+	<input type="submit">
+</form>
+
+<div class="error">{{error}}</div>
+{% endblock %}
+
+</body>
+</html>

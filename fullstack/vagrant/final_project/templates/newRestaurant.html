@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}New Restaurant{% endblock %}
+
+{% block content %}
+<h1 class="title">New Restaurant</h1>
+<form method="POST">
+<label for="name">Name:</label>
+<input class="field" id="name" type="text" name="restaurant_name">
+<div>
+	<input type="submit" value="Create">
+	<a href={{url_for('showRestaurants')}}>Cancel</a>
+</div>
+</form>
+{% endblock %}

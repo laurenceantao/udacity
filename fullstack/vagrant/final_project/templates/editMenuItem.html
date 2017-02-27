@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}New Menu Item{% endblock %}
+
+{% block content %}
+<h1 class="restaurant-title">{{restaurant.name}}</h1>
+<h2 class="section-title">Edit Menu Item</h2>
+<form method="POST">
+<label for="name">Name of dish:</label>
+<input class="field" id="name" type="text" name="dish_name" placeholder="{{item.name}}">
+<label for="course">Course:</label>
+<select class="field" id="courses" name="dish_course">
+	{% if item.course == 'Appetizer' %}
+		<option></option>
+		<option selected value="Appetizer">Appetizer</option>
+		<option value="Entree">Entree</option>
+		<option value="Dessert">Dessert</option>
+		<option value="Beverage">Beverage</option>
+	{% elif item.course == 'Entree' %}
+		<option></option>
+		<option value="Appetizer">Appetizer</option>
+		<option selected value="Entree">Entree</option>
+		<option value="Dessert">Dessert</option>
+		<option value="Beverage">Beverage</option>
+	{% elif item.course == 'Dessert' %}
+		<option></option>
+		<option value="Appetizer">Appetizer</option>
+		<option value="Entree">Entree</option>
+		<option selected value="Dessert">Dessert</option>
+		<option value="Beverage">Beverage</option>
+	{% elif item.course == 'Beverage' %}
+		<option></option>
+		<option value="Appetizer">Appetizer</option>
+		<option value="Entree">Entree</option>
+		<option value="Dessert">Dessert</option>
+		<option selected value="Beverage">Beverage</option>	
+	{% else %}
+		<option selected></option>
+		<option value="Appetizer">Appetizer</option>
+		<option value="Entree">Entree</option>
+		<option value="Dessert">Dessert</option>
+		<option value="Beverage">Beverage</option>
+	{% endif %}
+</select>
+<label for="price">Price:</label>
+<input class="field" id="price" name="dish_price" type="text" placeholder="{{item.price}}">
+<label for="description">Description:</label>
+<textarea class="field" id="description" name="dish_description" placeholder="{{item.description}}"></textarea>
+<div>
+	<input type="submit" value="Create">
+	<a href={{url_for('showMenu', restaurant_id=restaurant.id)}}>Cancel</a>
+</div>
+</form>
+{% endblock %}

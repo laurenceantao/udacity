@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Restaurants{% endblock %}
+
+{% block content %}
+<h1 class="title">Restaurants</h1>
+{% for resto in restaurants %}
+	<div class="restaurant">
+		<h2>
+			<a href="{{url_for('showMenu', restaurant_id = resto.id)}}">{{resto.name}}</a>
+		</h2>
+		<div class="edit_delete">
+			<a href={{url_for('editRestaurant', restaurant_id = resto.id)}}>Edit</a>
+			<a href={{url_for('deleteRestaurant', restaurant_id = resto.id)}}>Delete</a>
+		</div>
+	</div>
+{% endfor %}
+{% endblock %}
+
+

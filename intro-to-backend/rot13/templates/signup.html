@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homework2 - Signup</title>
+</head>
+<body>
+<h1>Signup</h1>
+<form method="post">
+	<label>Username
+		<input name="username">
+			{{username}}
+		</input>
+		{% if username_invalid %}
+			<span>That's not a valid username!</span>
+		{% elif no_username %}
+			<span>Field can't be blank!</span>
+		{% endif %}
+	</label>
+
+	<label>Password
+		<input name="pword1">
+		{{password}}
+		</input>
+		{% if password_invalid %}
+			<span>That wasn't a valid password!</span>
+		{% elif no_password1 %}
+			<span>Field can't be blank!</span>
+		{% endif %}
+	</label>
+
+	<label>Verify Password
+		<input name="pword2">
+		{{password}}
+		</input>
+		{% if password_diff %}
+			<span>Passwords didn't match!</span>
+		{% elif no_password2 %}
+			<span>Field can't be blank!</span>
+		{% endif %}
+	</label>
+
+	<label>Email (optional)
+		<input name="email">
+		{{email}}
+		</input>
+		{% if email_invalid %}
+			<span>That's not a valid email!</span>
+		{% endif %}
+	</label>
+<br>
+	<input type="submit">
+</form>
+</body>
+</html>

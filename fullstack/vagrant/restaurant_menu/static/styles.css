@@ -1,0 +1,48 @@
+body {
+	font-family: 'Caveat Brush', cursive;
+	background: lightyellow;
+	text-align: center;
+}
+
+h1 {
+	font-size: 4em;
+}
+
+.menu-item {
+	border-bottom: solid black 1px;
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px 20px;
+}
+
+.menu-item p {
+	margin: 0 0 0 0;
+}
+
+.menu-item a {
+	font-size: 0.7em;
+	text-decoration: none;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.edit {
+	color: red;
+}
+
+.delete {
+	color: red;
+}
+
+.description {
+	font-size: 1em;
+}
+
+.price {
+	padding-top: 20px;
+}
+
+.name {
+	font-size: 2em;
+}

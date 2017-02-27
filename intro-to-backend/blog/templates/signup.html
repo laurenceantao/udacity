@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+{% extends "main.html"%}
+{% block content %}
+<h2>Signup</h2>
+<div class="signup userdetails">
+	<form method="post">
+	<div class="element">
+		<label for="user">Username</label>
+		<input id="user" name="username" value="{{username}}">
+		<span class="error">{{user_error}}</span>
+	</div>
+
+	<div class="element">
+		<label for="pword1">Password</label>
+		<input type="password" id="pword1" name="password" value={{password}}>
+		<span class="error">{{pword1_error}}</span>
+	</div>
+
+	<div class="element">
+		<label for="pword2">Verify Password</label>
+		<input id="pword2" type="password" name="verify" value={{password}}>
+		<span class="error">{{pword2_error}}</span>
+	</div>
+
+	<div class="element">
+		<label for="email">Email (optional)</label>
+		<input id="email" name="email" value={{email}}>
+		<span class="error">{{email_error}}</span>
+	</div>
+	<input type="submit" class="submit">
+	</form>
+</div>
+{% endblock %}
+</body>
+</html>
