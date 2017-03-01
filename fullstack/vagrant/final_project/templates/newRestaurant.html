@@ -6,9 +6,9 @@
 <form method="POST">
 <label for="name">Name:</label>
 <input class="field" id="name" type="text" name="restaurant_name">
-<div>
-	<input type="submit" value="Create">
-	<a href={{url_for('showRestaurants')}}>Cancel</a>
+<div class="submit_cancel">
+	<input class="submit" type="submit" value="Create">
+	<a class="cancel" href="{{url_for('showRestaurants')}}">Cancel</a>
 </div>
 </form>
 {% endblock %}

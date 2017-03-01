@@ -4,8 +4,9 @@
 {% block content %}
 <h1 class="restaurant-title">{{restaurant.name}}</h1>
 <h2 class="section-title">Delete Menu Item</h2>
-<h3 class="warning">Will delete the following item:</h3>
-<div class="menu-item">
+<h3 class="text-danger">Will delete the following item:</h3>
+<form method="POST">
+<div class="to_delete menu-item">
 	<div class="item-name">
 		<h4>{{item.name}}</h4>
 	</div>
@@ -13,11 +14,9 @@
 	<div class="item-course">{{item.course}}</div>
 	<div class="item-description">{{item.description}}</div>
 </div>
-<form method="POST">
-
-<div>
-	<input id="delete" type="submit" value="Delete">
-	<a href={{url_for('showMenu', restaurant_id=restaurant.id)}}>Cancel</a>
+<div class="submit_cancel">
+	<input class="submit" id="delete" type="submit" value="Delete">
+	<a class="cancel" href={{url_for('showMenu', restaurant_id=restaurant.id)}}>Cancel</a>
 </div>
 </form>
 {% endblock %}

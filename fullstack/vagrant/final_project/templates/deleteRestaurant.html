@@ -4,14 +4,14 @@
 {% block content %}
 <h1 class="restaurant-title">{{restaurant.name}}</h1>
 <h2 class="section-title">Delete Restaurant</h2>
-<h3 class="warning">Will delete the following restaurant:</h3>
-<div class="restaurant">
+<h3 class="text-danger">Will delete the following restaurant:</h3>
+<form method="POST">
+<div class="to_delete restaurant">
 	<div class="restaurant-name">{{restaurant.name}}</div>
 </div>
-<form method="POST">
-<div>
-	<input id="delete" type="submit" value="Delete">
-	<a id="cancel" href={{url_for('showRestaurants')}}>Cancel</a>
+<div class="submit_cancel">
+	<input class="submit" id="delete" type="submit" value="Delete">
+	<a class="cancel" id="cancel" href={{url_for('showRestaurants')}}>Cancel</a>
 </div>
 </form>
 {% endblock %}

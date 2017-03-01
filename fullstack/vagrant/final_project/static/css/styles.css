@@ -1,0 +1,76 @@
+body {
+	font-family: 'Josefin Slab', serif;
+}
+
+h1 {
+	margin-top: 50px;
+	text-align: center;
+}
+
+h2, h3 {
+	text-align: center;
+}
+
+label {
+	width: 100px;
+	margin-left: auto;
+	clear: left;
+	display: inline-block;
+	float: left;
+}
+
+.field {
+	width: 200px;
+	margin-right: auto;
+	clear: right;
+	display: inline-block;
+	float: left;
+}
+
+form {
+	width: 400px;
+	margin: 0 auto 0 auto;
+}
+
+.submit {
+	clear: left;
+	margin-left: auto;
+}
+
+.cancel {
+	color: black;
+}
+
+.submit_cancel {
+	width: 150px;
+	padding-top: 20px;
+	margin: 0 auto 0 auto;
+	clear: both;
+}
+
+.to_delete {
+	text-align: center;
+}
+
+/*// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575px) { ... }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) { 
+	.restaurant-card .card-block {
+		height: 500px;
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+	.restaurant-card {
+		height: 500px;
+	}
+}*/

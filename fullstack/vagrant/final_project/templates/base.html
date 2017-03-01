@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/styles.css')}}">
+
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+
 	<title>restoDB - {% block title %}{% endblock %}</title>
 </head>
-<header>
-	<nav>
-		<div id="website-branding">restoDB</div>
-		<ul>
-			{% if restaurants %}
-			<li><a href={{url_for('newRestaurant')}}>New Restaurant</a></li>
-			{% endif %}
-			{% if restaurant %}
-				<li><a href={{url_for('newMenuItem', restaurant_id=restaurant.id)}}>New Menu Item</a></li>
-			{% endif %}
-		</ul>
-	</nav>
-</header>
 <body>
-	{% block content %}
-	{% endblock %}
+	<header>
+			<nav class="navbar navbar-toggleable-xl navbar-inverse bg-inverse">
+				<div class=container>
+					<a id="website-branding" class="navbar-brand" href="{{url_for('showRestaurants')}}">
+						<img src="{{url_for('static', filename='images/restodb_logo.svg')}}" width="30" height="30" class="d-inline-block align-top" alt="">
+						restoDB
+					</a>
+					<ul class="navbar-nav mr-auto">
+						{% if restaurants %}
+							<li class="nav-item"><a class="nav-link" href={{url_for('newRestaurant')}}>New Restaurant</a></li>
+						{% endif %}
+						{% if restaurant %}
+							<li class="nav-item"><a class="nav-link" href={{url_for('newMenuItem', restaurant_id=restaurant.id)}}>New Menu Item</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</nav>
+	</header>
+
+	<div>
+		{% with messages = get_flashed_messages(with_categories=true) %}
+			{% if messages %}
+				{% for category, message in messages %}
+					<div class="alert alert-{{ category }} alert-dismissible" role="alert">
+	      				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	      				{{ message }}
+      				</div>
+			 	{% endfor %}
+			{% endif %}
+		{% endwith %}
+	</div>
+
+	<div class="container">
+		{% block content %}
+		{% endblock %}
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
 </html>
